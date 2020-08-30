@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
@@ -29,7 +29,129 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h1>Sententia - make calculated decision like a poker pro</h1>
+        <div class="alert alert-primary" role="alert">
+          <h1><strong>Sententia</strong> - make calculated life decisions like a poker pro!</h1>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <h2>1) Describe what are you trying to decide on</h2>
+
+        <form id="sententia-description" class="mb-4">
+          <label for="description">Articulating the problem verbally helps to achieve a better decision. Especially useful before you spam the StackOverflow forum.</label>
+          <textarea id="description" placeholder="I want to decide if it's worth to start a blockchain coaching business as an IndieHacker and sacrifice my sweet 9-5 high and stable salary." class="form-control" rows="3"></textarea>
+        </form>
+
+        <h2>2) Define the Final Pot</h2>
+        <p>"The Final Pot" represents everything this decision is based on.</p>
+        <p>It's a mix of all the pros (positive) and cons (negative) going into the decision. Every item has a mathematical value.</p>
+
+      </div>
+
+      <div class="col-xs-12">
+        <form id="sententia" class="w-100">
+
+          <div class="pb-5">
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+
+              <input type="text" value="Making MY OWN 3000$/month business (72k in 2 years)" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+              <input type="number" value="72000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+
+              <input type="text" value="Flexible working hours" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+              <input type="number" value="5000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+
+              <input type="text" value="No stand-ups at 9am" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+              <input type="number" value="2000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+
+              <input type="text" value="Salary capped only by my sales skills" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+              <input type="number" value="30000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+
+              <input type="text" value="Burning cash savings (1 year without salary)" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+              <input type="number" value="-20000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+
+              <input type="text" value="Opportunity cost of not earning new money during 1 year" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+              <input type="number" value="-30000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+
+              <input type="text" value="Loneliness (I guess the stand-ups were nice after all...)" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+              <input type="number" value="-2000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+
+              <input type="text" value="General founders stress affecting your health" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+              <input type="number" value="-10000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
+            </div>
+
+            <h2>3) My Hand Strength %</h2>
+            <p>How would you estimate your chances to successfully execute the decision?</p>
+            <p>E.g.: <strong>Your opponent is life.</strong> My chances of building a successful blockchain business are based on my skills, health, emotional intelligence, IQ, random events, psychological maturity, experience, luck, etc.</p>
+
+            <div class="input-group mb-3 w-25">
+              <div class="input-group-prepend">
+                <span class="input-group-text">%</span>
+              </div>
+
+              <input type="text" value="My estimated chances" class="form-control w-100 item-desc" aria-label="Describe your estimated chance of success">
+              <input type="number" value="60" min="0" max="100" class="form-control" id="sententia-hand" aria-label="Value">
+            </div>
+
+            <div class="mb-3">
+              <h2>4) Calculate my odds</h2>
+              <p>The poker formula <code>Bet / Final Pot = Your Maximum Risk</code> calculation will decide whenever you can afford to execute this decision at the moment.</p>
+            </div>
+
+            <div class="mb-3">
+              <h3 class="pb-2">Decision:</h3>
+              <div id="sententia-decision"></div>
+              <input type="submit" id="sententia-calculate" class="btn btn-primary" value="Calculate">
+            </div>
+          </div>
+
+        </form>
+      </div>
+
       </div>
     </div>
   </div>
@@ -37,18 +159,11 @@
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
