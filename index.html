@@ -3,14 +3,13 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
+  <title>Sententia - Make calculated life decisions like a poker pro!</title>
+  <meta name="description" content="Calculate your chances in succeeding in life.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+  <meta property="og:title" content="Sententia - Make calculated life decisions like a poker pro!">
+  <meta property="og:description" content="An app to calculate your chances in succeeding in life.">
+  <meta property="og:image" content="https://web3coach-public.s3.eu-central-1.amazonaws.com/img/sententia_banner.png">
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
@@ -34,11 +33,17 @@
         </div>
       </div>
       <div class="col-xs-12">
-        <h2>1) Describe what are you trying to decide on</h2>
+        <h2>0) Start a new decision round</h2>
+        <div class="alert alert-warning" role="alert">
+          <p><strong>Reset this pre-filled tutorial (demo, example) and define your own decision and values.</strong></p>
+          <button id="sententia-reset" class="btn btn-danger">Reset</button>
+        </div>
+
+        <h2 class="mt-5">1) Describe what are you trying to decide on</h2>
 
         <form id="sententia-description" class="mb-4">
-          <label for="description">Articulating the problem verbally helps to achieve a better decision. Especially useful before you spam the StackOverflow forum.</label>
-          <textarea id="description" placeholder="I want to decide if it's worth to start a blockchain coaching business as an IndieHacker and sacrifice my sweet 9-5 high and stable salary." class="form-control" rows="3"></textarea>
+          <label for="sententia-description-textarea">Articulating the problem verbally helps with decision making.</label>
+          <textarea id="sententia-description-textarea" class="form-control" rows="3">I want to decide if it's worth to start a blockchain coaching business as an IndieHacker and sacrifice my sweet 9-5 high and stable salary.</textarea>
         </form>
 
         <h2>2) Define the Final Pot</h2>
@@ -49,82 +54,85 @@
 
       <div class="col-xs-12">
         <form id="sententia" class="w-100">
-
           <div class="pb-5">
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
+            <div id="sententia-form-body">
+              <div class="sententia-pot-item-group input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
+
+                <input type="text" value="Making MY OWN 3000$/month business (72k in 2 years)" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+                <input type="number" value="72000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
               </div>
 
-              <input type="text" value="Making MY OWN 3000$/month business (72k in 2 years)" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
-              <input type="number" value="72000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
-            </div>
+              <div class="sententia-pot-item-group input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
+                <input type="text" value="Flexible working hours" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+                <input type="number" value="5000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
               </div>
 
-              <input type="text" value="Flexible working hours" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
-              <input type="number" value="5000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
-            </div>
+              <div class="sententia-pot-item-group input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
+                <input type="text" value="No stand-ups at 9am" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+                <input type="number" value="2000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
               </div>
 
-              <input type="text" value="No stand-ups at 9am" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
-              <input type="number" value="2000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
-            </div>
+              <div class="sententia-pot-item-group input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
+                <input type="text" value="Salary capped only by my sales skills" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+                <input type="number" value="30000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
               </div>
 
-              <input type="text" value="Salary capped only by my sales skills" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
-              <input type="number" value="30000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
-            </div>
+              <div class="sententia-pot-item-group input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
+                <input type="text" value="Burning cash savings (1 year without salary)" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+                <input type="number" value="-20000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
               </div>
 
-              <input type="text" value="Burning cash savings (1 year without salary)" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
-              <input type="number" value="-20000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
-            </div>
+              <div class="sententia-pot-item-group input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
+                <input type="text" value="Opportunity cost of not earning new money during 1 year" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+                <input type="number" value="-30000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
               </div>
 
-              <input type="text" value="Opportunity cost of not earning new money during 1 year" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
-              <input type="number" value="-30000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
-            </div>
+              <div class="sententia-pot-item-group input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
+                <input type="text" value="Loneliness (I guess the stand-ups were nice after all...)" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+                <input type="number" value="-2000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
               </div>
 
-              <input type="text" value="Loneliness (I guess the stand-ups were nice after all...)" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
-              <input type="number" value="-2000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
-            </div>
+              <div class="sententia-pot-item-group input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
+                <input type="text" value="General founders stress affecting your health" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+                <input type="number" value="-10000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
               </div>
-
-              <input type="text" value="General founders stress affecting your health" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
-              <input type="number" value="-10000" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
             </div>
 
-            <h2>3) My Hand Strength %</h2>
+            <button id="sententia-pot-add" class="btn btn-warning block mt-3 mb-5">Add another pro/con into the decision process</button>
+
+            <h2>3) How strong hand/position do you have? %</h2>
             <p>How would you estimate your chances to successfully execute the decision?</p>
             <p>E.g.: <strong>Your opponent is life.</strong> My chances of building a successful blockchain business are based on my skills, health, emotional intelligence, IQ, random events, psychological maturity, experience, luck, etc.</p>
 
@@ -133,12 +141,12 @@
                 <span class="input-group-text">%</span>
               </div>
 
-              <input type="text" value="My estimated chances" class="form-control w-100 item-desc" aria-label="Describe your estimated chance of success">
-              <input type="number" value="40" min="0" max="100" class="form-control" id="sententia-hand" aria-label="Value">
+              <input type="text" disabled value="Your estimated chances" class="form-control w-100 item-desc disabled" aria-label="Describe your estimated chance of success">
+              <input type="number" value="40" min="0" max="99" class="form-control" id="sententia-hand" aria-label="Value">
             </div>
 
             <div class="mb-3">
-              <h2>4) Calculate my odds</h2>
+              <h2>4) Calculate your odds</h2>
               <p>The poker formula <code>Bet / Final Pot = Your Maximum Risk</code> calculation will decide whenever you can afford to execute this decision at the moment.</p>
             </div>
 

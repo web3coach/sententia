@@ -4,6 +4,21 @@
  */
 
 $(document).ready(function() {
+  let addPotItem = function() {
+    let $potItemTemplate = `
+      <div class="sententia-pot-item-group input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+        </div>
+
+        <input type="text" placeholder="Describe the pro/con and define its (positive/negative) value" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+        <input type="number" value="0" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
+      </div>
+      `;
+
+    $('#sententia-form-body').append($potItemTemplate);
+  };
+
   $(document).on("click", "#sententia-calculate", function(e) {
     e.preventDefault();
 
@@ -33,12 +48,49 @@ $(document).ready(function() {
     let maxRisk = (bet / pot) * 100;
     let odds = maxRisk.toFixed(2);
 
-    let minOddsMsg = `Your minimum required odds to succeed are <strong>${odds}%.</strong>`
+    let minOddsMsg = `<p class="pt-1">When you make this decision, you need to successfully execute it more than <strong>${odds}%</strong> of the time in order to profit from it in long-term.</p>`;
 
     if (hand < odds) {
-      $decision.html(`<div class="alert alert-danger" role="alert"><p><strong>Your will statistically fail.</strong> ${minOddsMsg}<br />You estimated your capabilities on only <strong>${hand}%.</strong></p><p class="mt-4">Improve your skills or adjust your situation towards a more statistically favorable outcome.</p></div>`);
+      $decision.html(`<div class="alert alert-danger" role="alert"><p><strong>Your will statistically fail.</strong> ${minOddsMsg}You estimated your capabilities on only <strong>${hand}%.</strong></p><p class="mt-4">Improve your skills or adjust your situation towards a more statistically favorable outcome.</p></div>`);
     } else {
-      $decision.html(`<div class="alert alert-success" role="alert"><p><strong>You will statistically succeed!</strong> ${minOddsMsg}<br />You estimated your capabilities on <strong>${hand}%.</strong></p><p>Go ahead and good luck!</p></div>`);
+      $decision.html(`<div class="alert alert-success" role="alert"><p><strong>You will statistically succeed!</strong> ${minOddsMsg}You estimated your capabilities on <strong>${hand}%.</strong></p><p>Go ahead and good luck!</p></div>`);
     }
   });
+
+  $(document).on('change', '#sententia-hand', function (e) {
+    let max = parseInt($(this).attr('max'));
+    let min = parseInt($(this).attr('min'));
+
+    if ($(this).val() > max) {
+      $(this).val(max);
+    }
+    else if ($(this).val() < min) {
+      $(this).val(min);
+    }
+  });
+
+  $(document).on('click', '#sententia-reset', function (e) {
+    e.preventDefault();
+
+    // Reset textarea
+    $('#sententia-description-textarea').val('');
+
+    // Reset all PROs/CONs
+    $('.sententia-pot-item-group').remove();
+
+    // Reset chances
+    $('#sententia-hand').val(40);
+
+    // Reset decision
+    $('#sententia-decision').html('');
+
+    // Add a default PRO/CON
+    addPotItem();
+  });
+
+  $(document).on('click', '#sententia-pot-add', function (e) {
+    e.preventDefault();
+
+    addPotItem();
+  })
 });
