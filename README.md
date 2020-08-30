@@ -2,7 +2,10 @@
 ---
 
 ## Demo
+https://sententia.web3.coach
 
+## Product + Code stream
+Built in 24h and documented in a Twitter thread: <add url>
 
 ## About
 **I build this product because I was tired of overthinking and unable to decide.**
@@ -10,8 +13,6 @@
 I want to have a system for making important life decisions. Preferably, a statistically measurable one.
 
 The idea was born while drinking my favorite rum (Diplomatico).
-
-Built in 24h and documented in a Twitter thread: <add url>
 
 Follow me on Twitter: https://twitter.com/Web3Coach
 
