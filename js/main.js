@@ -54,7 +54,15 @@ $(document).ready(function() {
     if (hand < odds) {
       $decision.html(`<div class="alert alert-danger" role="alert"><p><strong>Your will statistically fail.</strong> ${minOddsMsg}You estimated your capabilities on only <strong>${hand}%.</strong></p><p class="mt-4">Improve your skills or adjust your situation towards a more statistically favorable outcome.</p></div>`);
     } else {
-      $decision.html(`<div class="alert alert-success" role="alert"><p><strong>You will statistically succeed!</strong> ${minOddsMsg}You estimated your capabilities on <strong>${hand}%.</strong></p><p>Go ahead and good luck!</p></div>`);
+      let alertColor = 'alert-success';
+      let alertExtraWarningMsg = '';
+
+      if (hand - odds < 20) {
+        alertColor = 'alert-warning';
+        alertExtraWarningMsg = ' BUT it was very close - careful!';
+      }
+
+      $decision.html(`<div class="alert ${alertColor}" role="alert"><p><strong>You will statistically succeed!</strong> ${alertExtraWarningMsg} ${minOddsMsg}You estimated your capabilities on <strong>${hand}%.</strong></p><p>Go ahead and good luck!</p></div>`);
     }
   });
 
