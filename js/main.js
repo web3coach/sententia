@@ -59,7 +59,7 @@ $(document).ready(function() {
 
       if (hand - odds < 20) {
         alertColor = 'alert-warning';
-        alertExtraWarningMsg = ' BUT it was very close - careful!';
+        alertExtraWarningMsg = ' BUT it is very close - careful!';
       }
 
       $decision.html(`<div class="alert ${alertColor}" role="alert"><p><strong>You will statistically succeed!</strong> ${alertExtraWarningMsg} ${minOddsMsg}You estimated your capabilities on <strong>${hand}%.</strong></p><p>Go ahead and good luck!</p></div>`);
