@@ -5,7 +5,7 @@
 https://sententia.web3.coach
 
 ## Product + Code stream
-Built in 24h and documented in a Twitter thread: <add url>
+Built in 24h and documented in a Twitter thread: https://twitter.com/Web3Coach/status/1300317203624071169
 
 ## About
 **I build this product because I was tired of overthinking and unable to decide.**
