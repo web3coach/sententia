@@ -7,11 +7,12 @@ $(document).ready(function() {
   let addPotItem = function() {
     let $potItemTemplate = `
       <div class="sententia-pot-item-group input-group mb-3">
+        <input type="text" placeholder="Describe the pro/con and define its (positive/negative) value" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
+
         <div class="input-group-prepend">
           <span class="input-group-text">$</span>
         </div>
 
-        <input type="text" placeholder="Describe the pro/con and define its (positive/negative) value" class="form-control w-100 item-desc" aria-label="Describe the PRO/CON">
         <input type="number" value="0" class="form-control sententia-pot-item" aria-label="Positive/Negative worth">
       </div>
       `;
